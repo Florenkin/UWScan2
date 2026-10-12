@@ -1,0 +1,72 @@
+{
+  "version": 3,
+  "configurePresets": [
+    {
+      "hidden": true,
+      "name": "Qt",
+      "cacheVariables": {
+        "CMAKE_PREFIX_PATH": "$env{QTDIR}"
+      },
+      "vendor": {
+        "qt-project.org/Qt": {
+          "checksum": "wVa86FgEkvdCTVp1/nxvrkaemJc="
+        }
+      }
+    },
+    {
+      "name": "vs2022-x64",
+      "displayName": "UWScan Visual Studio 2022 x64",
+      "generator": "Visual Studio 17 2022",
+      "architecture": "x64",
+      "binaryDir": "${sourceDir}/out/build/vs2022-x64",
+      "inherits": [
+        "Qt"
+      ]
+    },
+    {
+      "name": "vs18-x64",
+      "displayName": "UWScan Visual Studio 18 x64",
+      "generator": "Visual Studio 18 2026",
+      "architecture": "x64",
+      "binaryDir": "${sourceDir}/out/build/vs18-x64",
+      "inherits": [
+        "Qt"
+      ]
+    }
+  ],
+  "buildPresets": [
+    {
+      "name": "vs2022-x64-debug",
+      "displayName": "UWScan VS2022 x64 Debug",
+      "configurePreset": "vs2022-x64",
+      "configuration": "Debug",
+      "jobs": 4
+    },
+    {
+      "name": "vs2022-x64-release",
+      "displayName": "UWScan VS2022 x64 Release",
+      "configurePreset": "vs2022-x64",
+      "configuration": "Release",
+      "jobs": 4
+    },
+    {
+      "name": "vs18-x64-debug",
+      "displayName": "UWScan VS18 x64 Debug",
+      "configurePreset": "vs18-x64",
+      "configuration": "Debug",
+      "jobs": 4
+    },
+    {
+      "name": "vs18-x64-release",
+      "displayName": "UWScan VS18 x64 Release",
+      "configurePreset": "vs18-x64",
+      "configuration": "Release",
+      "jobs": 4
+    }
+  ],
+  "vendor": {
+    "qt-project.org/Presets": {
+      "checksum": "67SmY24ZeVbebyKD0fGfIzb/bGI="
+    }
+  }
+}
